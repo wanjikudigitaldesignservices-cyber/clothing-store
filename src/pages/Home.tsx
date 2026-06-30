@@ -113,8 +113,8 @@ function ProductCard({ product }: { product: typeof PRODUCTS[0] }) {
 }
 
 export default function Home() {
-  const featured = PRODUCTS.slice(0, 4)
-  const newArrivals = PRODUCTS.slice(4)
+  const featured = PRODUCTS.filter(p => p.badge === 'Bestseller' || p.badge === 'Premium' || p.badge === 'Trending').slice(0, 4)
+  const newArrivals = PRODUCTS.filter(p => p.badge === 'New' || p.badge === 'Sale').slice(0, 4)
 
   return (
     <div>
